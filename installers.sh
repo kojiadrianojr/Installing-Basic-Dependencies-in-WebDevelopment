@@ -39,24 +39,17 @@ clear
 
 
 echo "Now installing Docker .... "
-sudo apt update
+sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update
+sudo apt update -y
 apt-cache policy docker-ce
 sudo apt install docker-ce
-sudo systemctl status docker
-
-# use docker without sudo
-sudo usermod -aG docker ${USER}
-newgrp docker
 
 clear
 
 echo "Thank you for using Installers by Koji Adriano Jr. 
 If you have questions send email:iisparkplugiiog@gmail.com"
-
-
-
+echo "This script file is open source, you can add anything you want. If the folder does not exist, create."
 

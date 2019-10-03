@@ -1,7 +1,7 @@
 To install:  
- **GIT** 
- **VSCode** 
- **NodeJS** 
+ **GIT**  
+ **VSCode**   
+ **NodeJS**   
 
 **Instructions**
 1. Make file executable first by: 

@@ -13,5 +13,5 @@ Brought to you by **JARVUC** ~ Just A Rather Very Unintelligent Coder
 If you'd like to be able to run docker commands without having to use sudo run the following commands.
 
 ****** 
- sudo usermod -aG docker $USER 
+ sudo usermod -aG docker $USER   
  newgrp docker 

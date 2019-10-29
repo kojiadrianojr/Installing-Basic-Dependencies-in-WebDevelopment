@@ -9,6 +9,15 @@ echo "The following will be installed:
 	+ Node.js (current release)
 	+ Docker 
 "
+echo "Install Curl First ...."
+sudo apt update && sudo apt upgrade
+sudo apt install curl
+echo "Instlal Vim ...."
+sudo apt remove --assume-yes vim-tiny 
+sudo apt update
+sudo apt install --assume-yes vim
+vi --version
+
 echo "Now installing VSCODE .... "
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/

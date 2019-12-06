@@ -1,4 +1,4 @@
-For Ubuntu only
+For Ubuntu only  
 To install:  
  1. **GIT**  
  2. **VSCode**   

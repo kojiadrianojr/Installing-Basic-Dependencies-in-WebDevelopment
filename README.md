@@ -1,12 +1,12 @@
 For Ubuntu only  
 To install:  
- 1. **GIT**  
- 2. **VSCode**   
- 3. **NodeJS**
- 4. **Docker**
- 5. **Docker-Compose**
- 6. **CURL**
- 7. **VIM**
+ * **GIT**  
+ * **VSCode**   
+ * **NodeJS**
+ * **Docker**
+ * **Docker-Compose**
+ * **CURL**
+ * **VIM**
  
  
 **Instructions**

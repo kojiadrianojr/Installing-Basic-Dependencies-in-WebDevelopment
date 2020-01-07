@@ -86,6 +86,7 @@ greeting(){
 
 while [ $run == true ]
 do
+	clear
 	echo "Choose what to install:
 	install code   |	Application
 	------------------------------------------
@@ -122,10 +123,13 @@ do
 			clear
 			;;
 		*)
-			echo "err"
+			echo "Unknown install code..."
+			USER_CH="default case"
+			clear
 			;;
+
 	esac
-	echo "Done installing $USER_CH..."
+	echo "Done with $USER_CH..."
 	echo -n "Need more packages to install? (y/n) "
 	read cont
 

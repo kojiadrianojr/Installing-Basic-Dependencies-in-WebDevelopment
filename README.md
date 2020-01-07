@@ -16,3 +16,11 @@ chmod +x [file name]
 If you'd like to be able to run docker commands without having to use sudo run the following commands.  
  sudo usermod -aG docker $USER   
  newgrp docker 
+
+
+******
+Follow me 
+* twitter: @kojiadrianojr 
+* instagram: @kojiergram / @the.vkeablog
+
+

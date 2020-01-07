@@ -46,15 +46,20 @@ npm -v
 echo "Node.js installed"
 clear
 
+echo "Do you want to install Docker? y/n only"
+read choice 
 
-echo "Now installing Docker .... "
-sudo apt update -y
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update -y
-apt-cache policy docker-ce
-sudo apt install docker-ce
+if [ $choice == "y" ] || [ $choice == "Y" ]
+then
+ echo "Now installing Docker .... "
+ sudo apt update -y
+ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+ sudo apt update -y
+ apt-cache policy docker-ce
+ sudo apt install docker-ce
+fi
 
 clear
 

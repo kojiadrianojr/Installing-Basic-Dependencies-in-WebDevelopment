@@ -4,10 +4,7 @@
 run=true
 clear
 
-
 echo "Welcome to the Installers"
-
-
 
 prepare(){
 echo "preparing ..."
@@ -21,6 +18,14 @@ sudo apt install --assume-yes vim
 vi --version
 }
 
+echo -n "Do you already have curl? (y/n):  "
+read preq_ch
+if [ $preq_ch == "n" ]
+then
+	prepare
+fi
+
+clear
 vs_code(){
 	echo "Now installing VSCODE .... "
 	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -66,6 +71,13 @@ docker(){
 	return 0
 }
 
+dcompose(){
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	docker-compose --version
+	return 0
+}
+
 greeting(){
 	echo "Thank you for using Installers by Koji Adriano Jr. 
 	If you have questions send email:iisparkplugiiog@gmail.com"
@@ -75,23 +87,56 @@ greeting(){
 while [ $run == true ]
 do
 	echo "Choose what to install:
-	install code |	Application
-	vs_code      |	Visual Studio Code
-	git	     |	Git
-	node_js	     |	NodeJS
-	docker	     |	Docker
-	__________________________________
+	install code   |	Application
+	------------------------------------------
+	vs_code        |	Visual Studio Code
+	git	       |	Git
+	node_js	       |	NodeJS
+	docker	       |	Docker
+	dcompose       |	docker-compose
+	_________________________________________
 	"
 	echo -n "enter code: "
 	read USER_CH
 	
 	case $USER_CH in
 		vs_code)
-			echo "Test"
+			vs_code
+			clear
+			;;
+		git)
+			git
+		
+			clear
+			;;
+		node_js)
+			nodejs
+			clear
+			;;
+		docker)
+			docker
+			clear
+			;;
+		dcompose)
+			dcompose
+			clear
+			;;
+		*)
+			echo "err"
 			;;
 	esac
+	echo "Done installing $USER_CH..."
+	echo -n "Need more packages to install? (y/n) "
+	read cont
 
+	if [ $cont == "n" ] || [ $cont == "N" ]
+	then
+		run=false
+	fi
 done
+
+clear
+greeting
 
 	
 
